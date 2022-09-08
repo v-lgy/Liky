@@ -43,6 +43,7 @@ function change(root) {
     root.right = change(root.right);
     const leftDeep = getDeep(root.left);
     const rightDeep = getDeep(root.right);
+
     if (leftDeep - rightDeep > 1) {
         const changeTreeDeep = getDeep(root.left.right);
         const noChangeTreeDeep = getDeep(root.left.left);
@@ -62,22 +63,23 @@ function change(root) {
 }
 
 const number = [];
-for (let i = 0; i < 1000000; i++) {
+for (let i = 0; i < 10000; i++) {
     number.push(Math.floor(Math.random() * 100000));
 }
 
 function addNode(root, n) {
-    
-    if(n < root.value) {
-        if(root.left) {
+    if (root.value === n) return;
+
+    if (n < root.value) {
+        if (root.left) {
             addNode(root.left, n);
-        }else {
+        } else {
             root.left = new Node(n);
         }
-    }else {
-        if(root.right) {
+    } else {
+        if (root.right) {
             addNode(root.right, n);
-        }else {
+        } else {
             root.right = new Node(n);
         }
     }
@@ -93,4 +95,22 @@ function buildSearchTree(number) {
 }
 
 const root = buildSearchTree(number);
+let count = 0
+function search(root, target) {
+    if (!root) return false;
 
+    count++;
+    if (root.value === target) return true;
+    if (target < root.value) {
+        return search(root.left, target)
+    } else {
+        return search(root.right, target);
+    }
+}
+
+console.log(search(root, 1000))
+console.log(count);
+count = 0;
+const newRoot = change(root);
+console.log(search(newRoot, 1000));
+console.log(count);
