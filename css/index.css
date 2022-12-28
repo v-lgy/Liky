@@ -23,4 +23,5 @@ button {
     color: #fff;
     letter-spacing: 10px;
     transition: all 0.25s;
+    z-index: 9999;
 }

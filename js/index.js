@@ -208,9 +208,12 @@ const btn = $("button");
 const audio = $("audio");
 
 btn.addEventListener("click", function () {
-    // this.remove();
     this.style.opacity = 0;
     audio.currentTime = 7.5;
     audio.play();
     loop();
+})
+
+btn.addEventListener("transitionend", function () {
+    btn.remove();
 })
