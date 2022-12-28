@@ -208,6 +208,8 @@ const audio = $("audio");
 
 window.onload = function () {
 
+    $(".loading").remove();
+
     const btn = document.createElement("button");
     btn.innerText = "点击";
     
