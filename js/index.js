@@ -209,7 +209,6 @@ const audio = $("audio");
 
 btn.addEventListener("click", function () {
     this.style.opacity = 0;
-    audio.currentTime = 7.5;
     audio.play();
     loop();
 })
