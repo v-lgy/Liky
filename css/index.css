@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: black;
+}
+
+canvas {
+    position: absolute;
+}
+
+button {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    width: 80%;
+    height: 300px;
+    font-size: 100px;
+    border-radius: 20px;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.8);
+    background: #f7adb1;
+    color: #fff;
+    letter-spacing: 10px;
+    transition: all 0.25s;
+}
