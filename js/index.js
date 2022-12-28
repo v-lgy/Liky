@@ -208,6 +208,8 @@ const audio = $("audio");
 
 window.onload = function () {
 
+    console.log("加载完毕");
+
     $(".loading").remove();
 
     const btn = document.createElement("button");
@@ -226,3 +228,7 @@ window.onload = function () {
     })
 }
 
+
+$(".tmp").onload = function () {
+    console.log(1);
+}
