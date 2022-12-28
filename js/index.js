@@ -204,15 +204,23 @@ function $(selected) {
     return document.querySelector(selected);
 }
 
-const btn = $("button");
 const audio = $("audio");
 
-btn.addEventListener("click", function () {
-    this.style.opacity = 0;
-    audio.play();
-    loop();
-})
+window.onload = function () {
 
-btn.addEventListener("transitionend", function () {
-    btn.remove();
-})
+    const btn = document.createElement("button");
+    btn.innerText = "点击";
+    
+    document.body.appendChild(btn);
+
+    btn.addEventListener("click", function () {
+        this.style.opacity = 0;
+        audio.play();
+        loop();
+    })
+    
+    btn.addEventListener("transitionend", function () {
+        btn.remove();
+    })
+}
+
